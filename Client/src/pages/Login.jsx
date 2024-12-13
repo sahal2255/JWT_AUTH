@@ -2,7 +2,9 @@ import React from 'react'
 
 import { useForm } from "react-hook-form";
 import { UserLogin } from '../services/AuthService';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+  const navigate=useNavigate()
   const {
     register,
     handleSubmit,
@@ -12,6 +14,7 @@ const Login = () => {
   const onSubmit = async(data) => {
     try {
       const response=await UserLogin(data)
+      navigate('/login')
       return response
     } catch (error) {
       console.log('error in the component',error)

@@ -54,13 +54,26 @@ const userLogin=async(req,res)=>{
                 sameSite:'strict',
                 secure:false
             })
-            res.status(200).json({message:'New User Created Successfully'})
+            res.status(201).json({message:'New User Created Successfully'})
         }
     } catch (error) {
         console.log('error in the login controller',error)
     }
 }
+const userData=async(req,res)=>{
+    const userId=req.user.id
+    console.log('userId',userId)
+}
 
+const checkAuth=async(req,res)=>{
+    try {
+        res.status(200).json(req.user)
+    } catch (error) {
+        console.log('error in the user check auth function',error)
+    }
+}
 module.exports={
     userLogin,
+    userData,
+    checkAuth
 }
