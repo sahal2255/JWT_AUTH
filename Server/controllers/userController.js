@@ -14,9 +14,7 @@ const userLogin=async(req,res)=>{
             const existuserpayload={id:existingUser._id,email:existingUser.email}
             const accesstoken=generateAccess(existuserpayload)
             const refreshtoken=generateRefresh(existuserpayload)
-            // console.log('existed user access token',accesstoken)
-            // console.log('existed user refresh token',refreshtoken)
-
+            
             res.cookie('accessToken', accesstoken, {
                 httpOnly: true,
                 sameSite: 'strict',
@@ -42,8 +40,7 @@ const userLogin=async(req,res)=>{
             const userpayload={id:newUser._id,email:newUser.email}
             const accesstoken=generateAccess(userpayload)
             const refreshtoken=generateRefresh(userpayload)
-            // console.log('access token',accesstoken)
-            // console.log('refresh token',refreshtoken)
+           
             res.cookie('accessToken', accesstoken, {
                 httpOnly: true,
                 sameSite: 'strict',
@@ -54,7 +51,7 @@ const userLogin=async(req,res)=>{
                 sameSite:'strict',
                 secure:false
             })
-            res.status(201).json({message:'New User Created Successfully'})
+            res.status(201).json({message:'New User Created Successfully',newUser})
         }
     } catch (error) {
         console.log('error in the login controller',error)

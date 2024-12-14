@@ -14,7 +14,11 @@ const Login = () => {
   const onSubmit = async(data) => {
     try {
       const response=await UserLogin(data)
-      navigate('/login')
+      console.log('response in the component',response)
+      if(response){
+        navigate('/profile')
+
+      }
       return response
     } catch (error) {
       console.log('error in the component',error)
