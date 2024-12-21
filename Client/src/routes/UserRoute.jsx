@@ -1,23 +1,24 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Login from '../pages/Login'
-import Profile from '../pages/Profile'
-import Home from '../pages/Home'
-import About from '../pages/About'
-import Product from '../pages/Product'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import UserLayout from '../layouts/UserLayout';
+import Home from '../pages/Home';
+import Product from '../pages/Product';
+import About from '../pages/About';
+import Profile from '../pages/Profile';
+import Login from '../pages/Login';
 
 const UserRoute = () => {
   return (
-    <div>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/product' element={<Product />} />
-      </Routes>
-    </div>
-  )
-}
+    <Routes>
+      <Route path="/" element={<UserLayout />}>
+        <Route index element={<Home />} />  
+        <Route path="product" element={<Product />} />
+        <Route path="about" element={<About />} />
+        <Route path="profile" element={<Profile />} />
+      </Route>
+      <Route path="/login" element={<Login />} />
+    </Routes>
+  );
+};
 
-export default UserRoute
+export default UserRoute;

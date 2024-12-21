@@ -1,20 +1,14 @@
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import './App.css';
+import UserRoute from './routes/UserRoute';
 
-import { BrowserRouter } from 'react-router-dom'
-import './App.css'
-import Login from './pages/Login'
-import UserRoute from './routes/UserRoute'
-import UserLayout from './layouts/UserLayout'
 function App() {
-
   return (
-    <>
     <BrowserRouter>
-      {/* <UserRoute /> */}
-      <UserLayout />
+      <UserRoute />
     </BrowserRouter>
-   
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
