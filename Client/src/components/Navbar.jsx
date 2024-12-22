@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link,  } from 'react-router-dom'
 import { IoMdMenu } from "react-icons/io";
+import { IoCartOutline } from "react-icons/io5";
 
 import Logo from '../../public/mylogo.png'
 const Navbar = () => {
@@ -21,10 +22,13 @@ const Navbar = () => {
                 <div className='hidden sm:flex'>
                     <ul className='flex'>
                         <Link to='/product'>
-                            <li className='text-white ml-10 uppercase text-sm font-bold hover:border-b'>Products</li>
+                            <li className='text-white ml-10 text-sm font-bold hover:border-b'>Products</li>
                         </Link>
                         <Link to='/about'>
-                            <li className='text-white ml-10 uppercase text-sm font-bold hover:border-b'>About Us</li>
+                            <li className='text-white ml-10 text-sm font-bold hover:border-b'>About Us</li>
+                        </Link>
+                        <Link to='*'>
+                        <li className='text-white ml-10 mr-7 '><IoCartOutline fontSize={20} /></li>
                         </Link>
                         
                     </ul>

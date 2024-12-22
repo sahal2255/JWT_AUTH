@@ -6,7 +6,7 @@ const UserLayout = () => {
   return (
     <div className="layout">
       <Navbar /> {/* Navbar is common for all pages */}
-      <main className="main-content">
+      <main className="main-content pt-36">
         <Outlet /> {/* Child routes will be rendered here */}
       </main>
     </div>
